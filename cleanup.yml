@@ -26,3 +26,8 @@
       ansible.builtin.file:
         path: "{{ app_dir }}/{{ app_file }}"
         state: absent
+    - name: Remove {{ app_user }}
+      ansible.builtin.user:
+        name: "{{ app_user }}"
+        state: absent
+        

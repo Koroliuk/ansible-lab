@@ -1,8 +1,3 @@
-{#
-TODO: reuse your unit from Lab 1
-TODO: Path to jar should use variables {{ app_dir }}/{{ app_file }}
-TODO: Environment variable for PORT should use value from variable {{ app_port }}
-#}
 [Unit]
 Description=Start java server
 Requires=network-online.target
@@ -16,4 +11,4 @@ Environment=SV_PORT={{ app_port }}
 ExecStart=/usr/bin/java -jar {{ app_dir }}/{{ app_file }} --server.port=${SV_PORT}
 Restart=always
 RestartSec=10
-User={{ ansible_user_id }}
+User={{ app_user }}
